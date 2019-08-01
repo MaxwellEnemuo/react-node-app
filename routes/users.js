@@ -4,6 +4,8 @@ const express = require("express");
 const router = express.Router();
 const auth = require("../middleware/auth");
 
+const userController = require("../controllers/users.controller");
+
 
 // REGISTER USERS
 router.post("/", auth, async (req, res) => {
@@ -40,19 +42,7 @@ router.post("/", auth, async (req, res) => {
 
 
 // GET ALL
-router.get("/", (req, res) => {
-  if (!req.query) return res.status(400).send("Missing URL parameter: name");
-
-  UsersModel.find()
-    .sort({ name: 1 })
-    .select({ name: 1, email: 1 })
-    .then(doc => {
-      res.json(doc);
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    });
-});
+router.get("/", userController.getAll);
 
 
 
@@ -63,7 +53,7 @@ router.get("/:id", (req, res) => {
       res.json(doc);
     })
     .catch(err => {
-      res.status(400).json(err + " :User id does not exist");
+      res.status(404).json("User id does not exist");
     });
 });
 

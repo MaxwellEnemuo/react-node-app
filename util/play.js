@@ -178,15 +178,15 @@ maskify("4556-3646-0793-5616");
 
 ////////////////////////////////////////
 
-// let profile = {
+let profile = {
 
-// }
+}
 
-// Object.create(profile);
+Object.create(profile);
 
-// profile.name = 'dave';
+profile.name = 'dave';
 
-// console.log(profile);
+console.log(profile);
 
 /////////////////////////////////////
 

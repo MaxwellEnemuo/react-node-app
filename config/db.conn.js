@@ -14,9 +14,9 @@ mongoose
     useNewUrlParser: true, useCreateIndex: true
   })
   .then(() => {
-    console.log("Connected to database...");
+    console.log("Info: Connected to database...");
   })
   .catch(err => {
-    console.log("Could not connect to database", err);
+    console.log("Info: Could not connect to database", err);
   });
 

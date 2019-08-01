@@ -129,7 +129,7 @@ const zeros = n => {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-module.exports.fizzbuzz = function(input) {
+const fizzbuzz = function(input) {
   if (typeof input !== "number") throw new Error("Input should be a number.");
   if (input % 3 === 0 && input % 5 === 0) return "Fizzbuzz";
   if (input % 3 === 0) return "Fizz";
@@ -146,13 +146,13 @@ async function hashing(password) {
 }
 
 ////////////////////////////////////////////////////////////////////
-module.exports.isDivisible = function(n, x, y) {
+const isDivisible = function(n, x, y) {
   if (n % x === 0 && n % y === 0) return true;
   return false;
 }
 
 /////////////////////////////////////////////////////////////////////
-module.exports.list = function(x) {
+const list = function(x) {
 
   let nameString = '';
 
@@ -180,7 +180,7 @@ module.exports.list = function(x) {
 
 /////////////////////////////////////////////////////////////
 
-module.exports.counterX = function(x) {
+const counterX = function(x) {
 
   var a = [5, 5, 5, 2, 2, 2, 2, 2, 9, 4];
   var result = { };
@@ -199,6 +199,9 @@ module.exports = {
 
   zeros : zeros,
   palindromeChainLength : palindromeChainLength,
-  hashing : hashing
-
+  hashing : hashing,
+  counterX : counterX,
+  list : list,
+  fizzbuzz : fizzbuzz,
+  isDivisible : isDivisible
 }

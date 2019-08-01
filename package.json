@@ -1,8 +1,25 @@
 {
   "name": "project_manager",
+  "jest": {
+    "verbose": true,
+    "coverageReporters": ["text"],
+    "reporters": ["default", "jest-junit"]
+  },
+  "jest-junit": {
+    "output": "output/coverage/junit/junit.xml",
+    "usePathForSuiteName": "true"
+  },
   "version": "0.1.0",
   "private": true,
   "main": "server.js",
+  "scripts": {
+    "start": "concurrently -k -r -s first \"react-scripts start\" \"nodemon server.js",
+    "start-watch": "PORT=5000 nodemon config/server.js",
+    "test": "jest --watchAll --verbose --coverage --coverageDirectory=output/coverage/jest",
+    "build": "react-scripts build",
+    "test-r": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@hapi/joi": "^15.0.3",
     "axios": "^0.18.0",
@@ -24,15 +41,9 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "jest": "^24.8.0"
-  },
-  "scripts": {
-    "start": "concurrently -k -r -s first \"react-scripts start\" \"nodemon server.js",
-    "start-watch": "PORT=5000 nodemon config/server.js",
-    "test": "jest --watchAll",
-    "build": "react-scripts build",
-    "test-r": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "jest": "^24.8.0",
+    "jest-junit": "^7.0.0",
+    "supertest": "^4.0.2"
   },
   "proxy": "http://localhost:5000/"
 }
