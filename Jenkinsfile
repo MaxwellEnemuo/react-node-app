@@ -19,7 +19,9 @@ pipeline {
     stage('Test') {
       steps {
         script {
-          bat 'npm run test'
+          withNPM(npmrcConfig: '13b5fb7c-70c3-49e6-b952-b02e54a648f1') {
+            bat 'npm run test'
+          }
         }
       }
       post {
@@ -32,7 +34,9 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          bat 'npm start'
+          withNPM(npmrcConfig: '13b5fb7c-70c3-49e6-b952-b02e54a648f1') {
+            bat 'npm start'
+          }
         }
       }
     }
