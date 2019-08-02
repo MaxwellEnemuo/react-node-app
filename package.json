@@ -13,7 +13,7 @@
   "private": true,
   "main": "server.js",
   "scripts": {
-    "start": "concurrently -k -r -s first \"react-scripts start\" \"nodemon server.js",
+    "start": "nodemon server.js",
     "start-watch": "PORT=5000 nodemon config/server.js",
     "test": "jest --watchAll --verbose --coverage --coverageDirectory=output/coverage/jest",
     "build": "react-scripts build",
