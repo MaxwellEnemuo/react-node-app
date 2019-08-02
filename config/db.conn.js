@@ -10,6 +10,8 @@ require('dotenv').config()
 
 const host = 'localhost';
 const database = 'mern';
+const username = '';
+const password = '';
 const port = 27017;
 
 
