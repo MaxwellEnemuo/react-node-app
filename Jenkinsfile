@@ -13,6 +13,7 @@ pipeline {
 
         withNPM(npmrcConfig: 'MyNpmrcConfig') {
             sh 'npm install'
+            sh "npm config ls"
         }
       }
     }
