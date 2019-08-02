@@ -33,11 +33,5 @@ pipeline {
       }
     }
     
-    post {
-        always {
-          junit 'coverage/junit/junit.xml'
-       }
-    }
-    
   }
 }
