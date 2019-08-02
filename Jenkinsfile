@@ -33,6 +33,7 @@ pipeline {
       steps {
         script {
           bat 'npm start'
+          bat 'npm pack'
         }
       }
     }
