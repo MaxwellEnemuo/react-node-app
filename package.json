@@ -3,10 +3,10 @@
   "jest": {
     "verbose": true,
     "coverageReporters": ["text"],
-    "reporters": ["default", "jest-junit"]
+    "reporters": [ "default", "jest-junit"]
   },
   "jest-junit": {
-    "output": "output/coverage/junit/junit.xml",
+    "output": "coverage/junit/junit.xml",
     "usePathForSuiteName": "true"
   },
   "version": "0.1.0",

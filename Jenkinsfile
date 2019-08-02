@@ -4,13 +4,13 @@ pipeline {
     nodejs 'default-nodejs'
   }
   stages {
-    // stage('Startup') {
-    //   steps {
-    //     script {
-    //       sh 'npm install'
-    //     }
-    //   }
-    // }
+    stage('Startup') {
+      steps {
+        script {
+          sh 'npm install'
+        }
+      }
+    }
     stage('Test') {
       steps {
         script {
@@ -19,7 +19,7 @@ pipeline {
       }
       post {
         always {
-          junit 'output/coverage/junit/junit.xml'
+          junit 'coverage/junit/junit.xml'
         }
       }
     }
