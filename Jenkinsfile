@@ -18,9 +18,9 @@ pipeline {
 
     stage('Test') {
       steps {
-
+        script {
           bat 'npm run test'
-   
+        }
       }
       post {
         always {
@@ -31,11 +31,11 @@ pipeline {
 
     stage('Build') {
       steps {
-  
+        script {
           bat 'npm start'
-        
+        }
       }
     }
-    
+
   }
 }
