@@ -14,9 +14,6 @@ pipeline {
         withNPM(npmrcConfig: 'MyNpmrcConfig') {
             sh 'npm install'
         }
-        // script {
-        //   sh 'npm install'
-        // }
       }
     }
 
