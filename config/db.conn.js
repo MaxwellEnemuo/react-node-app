@@ -8,8 +8,8 @@ require('dotenv').config()
 // const password = process.env.DB_PASSWORD;
 // const port = process.env.DB_PORT;
 
-const host = localhost;
-const database = mern;
+const host = 'localhost';
+const database = 'mern';
 const port = 27017;
 
 
