@@ -5,16 +5,21 @@ pipeline {
   tools {
     nodejs 'default-nodejs'
   }
-  
+
   stages {
 
     stage('Startup') {
       steps {
-        script {
-          sh 'npm install'
+
+        withNPM(npmrcConfig: 'MyNpmrcConfig') {
+            sh 'npm install'
         }
+        // script {
+        //   sh 'npm install'
+        // }
       }
     }
+
     stage('Test') {
       steps {
         script {
@@ -27,6 +32,7 @@ pipeline {
         }
       }
     }
+
     stage('Build') {
       steps {
         script {
