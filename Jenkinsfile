@@ -16,19 +16,10 @@ pipeline {
       }
     }
 
-    stage('Test') {
-      steps {
-        script {
-          bat 'npm test'
-        }
-      }
-    }
-
     stage('Build') {
       steps {
         script {
           bat 'npm start'
-          bat 'npm pack'
         }
       }
     }
