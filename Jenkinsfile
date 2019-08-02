@@ -22,11 +22,6 @@ pipeline {
           bat 'npm test'
         }
       }
-      post {
-        always {
-          junit 'coverage/junit/junit.xml'
-        }
-      }
     }
 
     stage('Build') {
@@ -37,5 +32,12 @@ pipeline {
         }
       }
     }
+    
+    post {
+        always {
+          junit 'coverage/junit/junit.xml'
+       }
+    }
+    
   }
 }
