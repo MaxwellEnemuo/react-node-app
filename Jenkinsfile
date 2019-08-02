@@ -11,7 +11,7 @@ pipeline {
     stage('Startup') {
       steps {
         withNPM(npmrcConfig: '13b5fb7c-70c3-49e6-b952-b02e54a648f1') {
-            sh 'npm install'
+            bat 'npm install'
         }
       }
     }
@@ -19,7 +19,7 @@ pipeline {
     stage('Test') {
       steps {
         script {
-          sh 'npm run test'
+          bat 'npm test'
         }
       }
       post {
@@ -32,8 +32,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          sh 'npm start'
-          sh 'npm pack'
+          bat 'npm start'
         }
       }
     }
